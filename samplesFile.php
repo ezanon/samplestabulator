@@ -3,7 +3,6 @@
 class samplesFile {
     
     private $fOrigem;
-    private $fDestiny;
     
     public function __construct($arq = false) {
         if ($arq) {
@@ -25,13 +24,10 @@ class samplesFile {
         $arq2 = explode('.',$arq);
         $arq2 = 'tab_' . $arq2[0] . '.csv';
         $this->arqSaida = $arq2;
-        //$this->fDestiny = fopen($arq2,'w');
-        $this->fDestiny = fopen('php://output', 'w');
     }
     
     public function closeFile() {
         fclose($this->fOrigem);
-        fclose($this->fDestiny);
         return true;
     }
     
@@ -75,7 +71,6 @@ class samplesFile {
         foreach ($this->tabulado as $element=>$values){
             $row = "$element;" . implode(";", $values) . "\n";
             $this->table.=$row;
-           // fwrite($this->fDestiny, $row);
         }
         return true;
     }
@@ -86,7 +81,6 @@ class samplesFile {
         header("Content-Disposition: attachment; filename={$this->arqSaida}");
         header("Pragma: no-cache");
         echo $this->table;
-        //echo '<pre>' . $this->table . '</pre>';
         return true;
     }
 }

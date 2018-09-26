@@ -12,6 +12,15 @@
     <div class="container bg-light">
         
         <h2>Samples Tabulator</h2>
+        <hr>
+        
+        <div class="card">
+            <div class="card-body">
+                Realiza a seleção dos dados de % Peso de Óxidos (coluna Ox mass%) do arquivo txt para CSV.<br>
+                Microssonda JEOL JXA-FE-8530
+            </div>
+        </div>
+        <hr>
 
         <form enctype="multipart/form-data" method="POST" action="tabbing.php" >
             <div class="form-row">
@@ -24,8 +33,8 @@
                 <button id="envio" name="envio" type="submit" class="btn btn-primary">Enviar</button>
             </div>
         </form>
-
-        <footer class="page-footer font-small pt-4">
+        
+        <footer class="page-footer font-small pt-4"><hr>
             <div class="footer-copyright text-center py-3">Instituto de Geociências USP © 2018-<?php echo date('Y'); ?> <a target="_blank" href="https://github.com/ezanon/samplestabulator">github.com/ezanon/samplestabulator</a>
             </div>
         </footer>        
